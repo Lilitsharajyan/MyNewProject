@@ -14,15 +14,14 @@ for (let i = start; i <= end; i++) {
         index++;
     }
 }
-let min = primenumbers[0];
-let max = primenumbers[primenumbers.length-1];
-if (min == max && min == null) {
-    console.log("There is no prime number in the range of [" + n1 + ", " + n2 + "]");
-}
-if (min == max && min > null) {
-    console.log("There is only one prime number in the range of [" + n1 + ", " + n2 + "]: " + min);
-}
-if (min !== max) {
-    console.log("Minimum prime number in the range of [" + n1 + ", " + n2 + "] is: " + min);
-    console.log("Maximum prime number in the range of [" + n1 + ", " + n2 + "] is: " + max);
+switch (primenumbers.length) {
+    case 0:
+        console.log("There is no prime number in the range of [" + n1 + ", " + n2 + "]");
+        break;
+    case 1:
+        console.log("There is only one prime number in the range of [" + n1 + ", " + n2 + "]: " + primenumbers[0]);
+        break;
+    default:
+        console.log("Minimum prime number in the range of [" + n1 + ", " + n2 + "] is: " + primenumbers[0]);
+        console.log("Maximum prime number in the range of [" + n1 + ", " + n2 + "] is: " + primenumbers[primenumbers.length - 1]);
 }
